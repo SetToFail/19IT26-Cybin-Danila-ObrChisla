@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>obrChisla</title>
+</head>
+<body>
+	<input type="text" id="a" placeholder="A">
+	<br><br>
+	<input type="text" id="c" placeholder="C">
+	<br><br>
+
+	<br><br>
+	<input type="button" onclick="obrCh()" value="Find">
+	<script type="text/javascript">
+		function obrCh() {
+			var a = 0;
+			var c = 0;
+			a = document.getElementById('a').value;
+			c = document.getElementById('c').value;
+			for (var i = 0; i < c; i++) {
+				if(a * i > c){
+					var res = (a * i) % c;
+				}
+				else
+				{
+					var res = a * i;
+				}
+				if( a % c == 0 || c % a == 0){
+					console.log('Невозможно решить, \'a\' и \'b\' взаимоделимы')
+					break;
+				}
+				if(res == 1){
+					console.log(i);
+					break;
+				}
+
+			}
+		}
+	</script>
+</body>
+</html>
